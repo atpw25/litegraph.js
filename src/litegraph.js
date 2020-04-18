@@ -8289,7 +8289,7 @@ LGraphNode.prototype.executeAction = function(action)
 							var v = w.value;
 							if( w.options.values )
 							{
-								var values = w.options.values;
+								var values = w.options.values || {};
 								if( values.constructor === Function )
 									values = values();
 								if(values && values.constructor !== Array)
@@ -10113,7 +10113,7 @@ LGraphNode.prototype.executeAction = function(action)
 
     //API *************************************************
     //like rect but rounded corners
-    if (this.CanvasRenderingContext2D) {
+    if (window.CanvasRenderingContext2D) {
         CanvasRenderingContext2D.prototype.roundRect = function(
             x,
             y,
